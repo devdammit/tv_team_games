@@ -40,12 +40,44 @@ func main() {
 		RefereeButtonPIN: 21,
 		Teams: []participants.TeamOpts{
 			{
-				ButtonPIN: 26,
+				ButtonPIN: 20, // PIN 28
 				Name:      "Cepheus",
 			},
 			{
-				ButtonPIN: 20,
+				ButtonPIN: 26, // pin 25
 				Name:      "Draco",
+			},
+			{
+				ButtonPIN: 16, // pin 27
+				Name:      "Hercules",
+			},
+			{
+				ButtonPIN: 6, // pin 22
+				Name:      "Hydra",
+			},
+			{
+				ButtonPIN: 5, // pin 21
+				Name:      "Leo",
+			},
+			{
+				ButtonPIN: 25, // 6
+				Name:      "Lyra",
+			},
+			{
+				ButtonPIN: 24, // 5
+				Name:      "Perseus",
+			},
+			{
+				ButtonPIN: 22, // 3
+				Name:      "Phoenix",
+			},
+			{
+				ButtonPIN: 27, // 4
+				Name:      "Saggita",
+			},
+			{
+				ButtonPIN: 17, // 0
+				Name:      "Vela",
 			},
 		},
 	}
