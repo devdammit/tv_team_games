@@ -52,7 +52,7 @@ func main() {
 				Name:      "Hercules",
 			},
 			{
-				ButtonPIN: 15, // pin 16
+				ButtonPIN: 12, // pin 26
 				Name:      "Hydra",
 			},
 			{
