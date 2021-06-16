@@ -24,7 +24,7 @@ export const useWatchPoints = () => {
     const [startedAt, setStartedAt] = useState<Date | null>()
     const [status, setStatus] = useState<PointStatus>()
     const [results, setResults] = useState<Result[]>([])
-    const [roundNum, setRoundNum] = useState<number>()
+    const [roundNum, setRoundNum] = useState<number>(0)
 
     useEffect(() => {
         const pointSource = new EventSource(`${process.env.NEXT_PUBLIC_HOST_EVENT_SOURCE}?stream=point`)

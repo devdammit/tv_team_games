@@ -92,6 +92,12 @@ func main() {
 	server.CreateStream("vote")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/events", server.HTTPHandler)
+	mux.HandleFunc("/restart", func(w http.ResponseWriter, r *http.Request) {
+		game.Start()
+		server.Close()
+		server.CreateStream("point")
+		server.CreateStream("vote")
+	})
 
 	game.Server = server
 

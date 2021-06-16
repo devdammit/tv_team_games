@@ -41,6 +41,9 @@ func NewGame(opts Options) *Game {
 }
 
 func (game *Game) Start() {
+	game.CurrentPoint = 0
+	game.Points = []*Point{}
+
 	game.NextPoint()
 }
 
