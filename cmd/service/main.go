@@ -52,11 +52,11 @@ func main() {
 				Name:      "Hercules",
 			},
 			{
-				ButtonPIN: 6, // pin 22
+				ButtonPIN: 15, // pin 16
 				Name:      "Hydra",
 			},
 			{
-				ButtonPIN: 5, // pin 21
+				ButtonPIN: 18, // pin 1
 				Name:      "Leo",
 			},
 			{
@@ -72,7 +72,7 @@ func main() {
 				Name:      "Phoenix",
 			},
 			{
-				ButtonPIN: 27, // 4
+				ButtonPIN: 27, // 2
 				Name:      "Saggita",
 			},
 			{
