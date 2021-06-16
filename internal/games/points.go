@@ -104,7 +104,7 @@ func (p *Point) OnTeamPress(team *participants.Team) {
 		if _, ok := p.Results[uint8(team.Index)]; !ok {
 			result := NewResult(uint8(team.Index))
 			p.Results[uint8(team.Index)] = *result
-			fmt.Printf("Team #%v pressed \n", team.Index)
+			fmt.Printf("Team #%s finished \n", team.Name)
 
 			p.EmitVoteTeam(team)
 
