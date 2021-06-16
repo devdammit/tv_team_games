@@ -28,7 +28,6 @@ func WaitForCtrlC() {
 //
 //
 
-
 func main() {
 	err := rpio.Open()
 	if err != nil {
@@ -38,19 +37,15 @@ func main() {
 	defer rpio.Close()
 
 	gameOpts := games.Options{
-		RefereeButtonPIN: 17,
+		RefereeButtonPIN: 21,
 		Teams: []participants.TeamOpts{
 			{
-				ButtonPIN: 27,
-				Name: "Cepheus",
+				ButtonPIN: 26,
+				Name:      "Cepheus",
 			},
 			{
-				ButtonPIN: 23,
-				Name: "Draco",
-			},
-			{
-				ButtonPIN: 24,
-				Name: "Hercules",
+				ButtonPIN: 20,
+				Name:      "Draco",
 			},
 		},
 	}
@@ -59,7 +54,6 @@ func main() {
 
 	fmt.Println("Starting game")
 	game.Start()
-
 
 	server := sse.New()
 	server.CreateStream("point")
@@ -70,7 +64,6 @@ func main() {
 	game.Server = server
 
 	http.ListenAndServe(":8080", mux)
-
 
 	WaitForCtrlC()
 }
