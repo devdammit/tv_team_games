@@ -1,0 +1,28 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  width: 900px;
+}
+
+.teamCard {
+  height: 225px;
+}
+
+.stateBar {
+  width: 900px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}

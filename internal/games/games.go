@@ -61,6 +61,7 @@ func (game *Game) OnStartPoint(point *Point) {
 	b, _ := json.Marshal(PointAction{
 		Type:   StartedPoint,
 		Number: point.Number,
+		Date:   time.Now(),
 	})
 
 	game.Server.Publish("point", &sse.Event{
@@ -78,9 +79,10 @@ func (game *Game) OnFinishPoint(point *Point) {
 	}
 
 	b, _ := json.Marshal(PointAction{
-		Type:    StoppedPoint,
+		Type:    FinishedPoint,
 		Number:  point.Number,
 		Results: results,
+		Date:    time.Now(),
 	})
 
 	game.Server.Publish("point", &sse.Event{
@@ -100,7 +102,24 @@ func (game *Game) OnVoteTeam(team *participants.Team) {
 		RangeTime: time.Now(),
 	})
 
+	var results []Result
+
+	for _, result := range game.Points[game.CurrentPoint].Results {
+		results = append(results, result)
+	}
+
+	p, _ := json.Marshal(PointAction{
+		Type:    UpdateResultPoint,
+		Number:  game.CurrentPoint,
+		Results: results,
+		Date:    time.Now(),
+	})
+
 	game.Server.Publish("vote", &sse.Event{
 		Data: b,
+	})
+
+	game.Server.Publish("point", &sse.Event{
+		Data: p,
 	})
 }

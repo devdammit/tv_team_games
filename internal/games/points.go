@@ -102,7 +102,8 @@ func (p *Point) OnRefereePress() {
 func (p *Point) OnTeamPress(team *participants.Team) {
 	if p.mode == Started {
 		if _, ok := p.Results[uint8(team.Index)]; !ok {
-			result := NewResult(uint8(team.Index))
+			result := NewResult(uint8(team.Index), team.Name)
+
 			p.Results[uint8(team.Index)] = *result
 			fmt.Printf("Team #%s finished \n", team.Name)
 
